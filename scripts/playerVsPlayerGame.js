@@ -246,7 +246,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
             playerTwoInput = 'rock';
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, playerTwoInput);
+            PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
 
@@ -260,7 +260,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
             playerTwoInput = 'paper';
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, playerTwoInput);
+            PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
 
@@ -274,7 +274,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
             playerTwoInput = 'scissors';
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, playerTwoInput);
+            PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
 
@@ -288,7 +288,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
             playerTwoInput = 'lizard';
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, playerTwoInput);
+            PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
 
@@ -302,11 +302,11 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
             playerTwoInput = 'spock';
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, playerTwoInput);
+            PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
 
-    const PlayerVsPlayerFiveRounds = (playerOne, playerTwo) => {
+    const PlayerVsPlayer = (playerOne, playerTwo) => {
         if (playerOne === playerTwo && playerTwo === playerOne) {
             roundsSpan.textContent++;
             roundCounter++;

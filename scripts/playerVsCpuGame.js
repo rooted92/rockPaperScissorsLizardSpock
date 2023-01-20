@@ -246,7 +246,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             GetCpuInput();
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, cpuInput);
+            PlayerVsCpu(playerOneInput, cpuInput);
         }
     });
 
@@ -261,7 +261,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             GetCpuInput();
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, cpuInput);
+            PlayerVsCpu(playerOneInput, cpuInput);
         }
     });
 
@@ -276,7 +276,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             GetCpuInput();
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, cpuInput);
+            PlayerVsCpu(playerOneInput, cpuInput);
         }
     });
 
@@ -291,7 +291,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             GetCpuInput();
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, cpuInput);
+            PlayerVsCpu(playerOneInput, cpuInput);
         }
     });
 
@@ -302,15 +302,14 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             gameText.textContent = 'Player 2 make your choice';
         }
         else {
-            cpuInput = 'spock';
             GetCpuInput();
             playerOneTurn = true;
             gameText.textContent = 'Player 1 make your choice';
-            PlayerVsPlayerFiveRounds(playerOneInput, cpuInput);
+            PlayerVsCpu(playerOneInput, cpuInput);
         }
     });
 
-    const PlayerVsPlayerFiveRounds = (playerOne, cpu) => {
+    const PlayerVsCpu = (playerOne, cpu) => {
         if (playerOne === cpu && cpu === playerOne) {
             gameText.textContent = 'TIE! Player 1 make your choice';
             roundsSpan.textContent++;
@@ -377,10 +376,10 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         fetch('https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption').then(
             response => response.text()
         ).then(
-            data =>  console.log(data.toLowerCase())
+            data =>  cpuInput = data.toLowerCase()
         )
     }
-    GetCpuInput();
+    // GetCpuInput();
 }
 
 export { flag as cpuFlag, CreatePlayerVsCpuContent }
