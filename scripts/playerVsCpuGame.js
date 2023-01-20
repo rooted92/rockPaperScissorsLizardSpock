@@ -247,12 +247,14 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     //dummy variable to resolve undefined value of cpu input
     let test = GetCpuInput();
     test = cpuInput;
+    console.log(test);
 
     //when buttons are clicked it will save inputs PlayerVsCpu will compare values
     rockBtn.addEventListener('click', function () {
         playerOneInput = 'rock';
         GetCpuInput();
         console.log(cpuInput);
+        gameText.textContent = 'Player 1 make your choice';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
@@ -260,6 +262,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         playerOneInput = 'paper';
         GetCpuInput();
         console.log(cpuInput);
+        gameText.textContent = 'Player 1 make your choice';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
@@ -267,6 +270,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         playerOneInput = 'scissors';
         GetCpuInput();
         console.log(cpuInput);
+        gameText.textContent = 'Player 1 make your choice';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
@@ -274,6 +278,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         playerOneInput = 'lizard';
         GetCpuInput();
         console.log(cpuInput);
+        gameText.textContent = 'Player 1 make your choice';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
@@ -281,15 +286,16 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         playerOneInput = 'spock';
         GetCpuInput();
         console.log(cpuInput);
+        gameText.textContent = 'Player 1 make your choice';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     //compare inputs
     const PlayerVsCpu = (playerOne, cpu) => {
         if (playerOne === cpu) {
-            gameText.textContent = 'TIE! Player 1 make your choice';
             roundsSpan.textContent++;
             roundCounter++;
+            gameText.textContent = `Round: ${roundCounter} was tied! Player 1 make your choice`;
         }
         else if ((playerOne === 'rock' && (cpu === "scissors" || cpu === "lizard")) || (playerOne === "paper" && (cpu === "rock" || cpu === "spock")) || (playerOne === "scissors" && (cpu === "lizard" || cpu === "paper")) || (playerOne === "lizard" && (cpu === "paper" || cpu === "spock")) || (playerOne === "spock" && (cpu === "rock" || cpu === "scissors"))) {
             playerOneSpan.textContent++;
