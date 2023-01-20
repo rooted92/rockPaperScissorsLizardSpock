@@ -53,7 +53,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
     //make 'col-4' divs
     let firstColFourDiv = document.createElement('div');
     firstColFourDiv.className = 'col-4 d-flex justify-content-center';
-    firstColFourDiv.appendChild(playerOneText)
+    firstColFourDiv.appendChild(playerOneText);
     firstColFourDiv.appendChild(playerOneSpan);
     let secondColFourDiv = document.createElement('div');
     secondColFourDiv.className = 'col-4 d-flex justify-content-center';
@@ -119,23 +119,23 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
     spockImg.alt = 'spock';
 
     //make 'button' elements
-    let rockBtn = document.createElement('button')
+    let rockBtn = document.createElement('button');
     rockBtn.id = 'rock-btn';
     rockBtn.className = 'img-btn';
     rockBtn.value = 'rock';
-    let paperBtn = document.createElement('button')
+    let paperBtn = document.createElement('button');
     paperBtn.id = 'paper-btn';
     paperBtn.className = 'img-btn';
     paperBtn.value = 'paper';
-    let scissorsBtn = document.createElement('button')
+    let scissorsBtn = document.createElement('button');
     scissorsBtn.id = 'scissors-btn';
     scissorsBtn.className = 'img-btn';
     scissorsBtn.value = 'scissors';
-    let lizardBtn = document.createElement('button')
+    let lizardBtn = document.createElement('button');
     lizardBtn.id = 'lizard-btn';
     lizardBtn.className = 'img-btn';
     lizardBtn.value = 'lizard';
-    let spockBtn = document.createElement('button')
+    let spockBtn = document.createElement('button');
     spockBtn.id = 'spock-btn';
     spockBtn.className = 'img-btn';
     spockBtn.value = 'spock';
@@ -175,11 +175,11 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
     a.appendChild(returnHomeBtn);
 
     //make 'col-12' div
-    let secondColTwelve = document.createElement('div')
+    let secondColTwelve = document.createElement('div');
     secondColTwelve.className = 'col-12';
     
     //make 'row'div
-    let mainMenuBtnRow = document.createElement('div')
+    let mainMenuBtnRow = document.createElement('div');
     mainMenuBtnRow.className = 'row text-center';
     mainMenuBtnRow.appendChild(secondColTwelve);
     mainMenuBtnRow.appendChild(a);
