@@ -236,86 +236,42 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     }
 
     rockBtn.addEventListener('click', function () {
-        if (playerOneTurn) {
-            playerOneInput = 'rock';
-            playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
-        }
-        else if (!playerOneTurn) {
-            cpuInput = 'rock';
-            GetCpuInput();
-            playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
-            PlayerVsCpu(playerOneInput, cpuInput);
-        }
+        playerOneInput = 'rock';
+        GetCpuInput();
+        PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     paperBtn.addEventListener('click', function () {
-        if (playerOneTurn) {
-            playerOneInput = 'paper';
-            playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
-        }
-        else {
-            cpuInput = 'paper';
-            GetCpuInput();
-            playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
-            PlayerVsCpu(playerOneInput, cpuInput);
-        }
+        playerOneInput = 'paper';
+        GetCpuInput();
+        PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     scissorsBtn.addEventListener('click', function () {
-        if (playerOneTurn) {
-            playerOneInput = 'scissors';
-            playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
-        }
-        else {
-            cpuInput = 'scissors';
-            GetCpuInput();
-            playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
-            PlayerVsCpu(playerOneInput, cpuInput);
-        }
+        playerOneInput = 'scissors';
+        GetCpuInput();
+        PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     lizardBtn.addEventListener('click', function () {
-        if (playerOneTurn) {
-            playerOneInput = 'lizard';
-            playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
-        }
-        else {
-            cpuInput = 'lizard';
-            GetCpuInput();
-            playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
-            PlayerVsCpu(playerOneInput, cpuInput);
-        }
+        playerOneInput = 'lizard';
+        GetCpuInput();
+        PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     spockBtn.addEventListener('click', function () {
-        if (playerOneTurn) {
-            playerOneInput = 'spock';
-            playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
-        }
-        else {
-            GetCpuInput();
-            playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
-            PlayerVsCpu(playerOneInput, cpuInput);
-        }
+        playerOneInput = 'rock';
+        GetCpuInput();
+        PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     const PlayerVsCpu = (playerOne, cpu) => {
-        if (playerOne === cpu && cpu === playerOne) {
+        if (playerOne === cpu) {
             gameText.textContent = 'TIE! Player 1 make your choice';
             roundsSpan.textContent++;
             roundCounter++;
         }
-        else if ((playerOne === 'rock' && (cpu == "scissors" || cpu == "lizard")) || (playerOne == "paper" && (cpu == "rock" || cpu == "spock")) || (playerOne == "scissors" && (cpu == "lizard" || cpu == "paper")) || (playerOne == "lizard" && (cpu == "paper" || cpu == "spock")) || (playerOne == "spock" && (cpu == "rock" || cpu == "scissors"))) {
+        else if ((playerOne === 'rock' && (cpu === "scissors" || cpu === "lizard")) || (playerOne === "paper" && (cpu === "rock" || cpu === "spock")) || (playerOne === "scissors" && (cpu === "lizard" || cpu === "paper")) || (playerOne === "lizard" && (cpu === "paper" || cpu === "spock")) || (playerOne === "spock" && (cpu === "rock" || cpu === "scissors"))) {
             playerOneSpan.textContent++;
             playerOneScore++;
             roundsSpan.textContent++;
@@ -379,7 +335,6 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             data =>  cpuInput = data.toLowerCase()
         )
     }
-    // GetCpuInput();
 }
 
 export { flag as cpuFlag, CreatePlayerVsCpuContent }

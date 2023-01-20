@@ -307,12 +307,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
     });
 
     const PlayerVsPlayer = (playerOne, playerTwo) => {
-        if (playerOne === playerTwo && playerTwo === playerOne) {
+        if (playerOne === playerTwo) {
             roundsSpan.textContent++;
             roundCounter++;
             gameText.textContent = `Round: ${roundCounter} was tied! | Player 1 make your choice`;
         }
-        else if ((playerOne === 'rock' && (playerTwo == "scissors" || playerTwo == "lizard")) || (playerOne == "paper" && (playerTwo == "rock" || playerTwo == "spock")) || (playerOne == "scissors" && (playerTwo == "lizard" || playerTwo == "paper")) || (playerOne == "lizard" && (playerTwo == "paper" || playerTwo == "spock")) || (playerOne == "spock" && (playerTwo == "rock" || playerTwo == "scissors")))
+        else if ((playerOne === 'rock' && (playerTwo === "scissors" || playerTwo === "lizard")) || (playerOne == "paper" && (playerTwo === "rock" || playerTwo === "spock")) || (playerOne === "scissors" && (playerTwo === "lizard" || playerTwo === "paper")) || (playerOne === "lizard" && (playerTwo === "paper" || playerTwo === "spock")) || (playerOne === "spock" && (playerTwo === "rock" || playerTwo === "scissors")))
         {
             playerOneSpan.textContent++;
             playerOneScore++;
