@@ -99,23 +99,23 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     //make 'img' elements
     let rockImg = document.createElement('img');
     rockImg.className = 'images-row-gamePlay';
-    rockImg.src = '../assets/apple-rock.png';
+    rockImg.src = './assets/apple-rock.png';
     rockImg.alt = 'rock';
     let paperImg = document.createElement('img');
     paperImg.className = 'images-row-gamePlay';
-    paperImg.src = '../assets/apple-roll-of-paper.png';
+    paperImg.src = './assets/apple-roll-of-paper.png';
     paperImg.alt = 'paper';
     let scissorsImg = document.createElement('img');
     scissorsImg.className = 'images-row-gamePlay';
-    scissorsImg.src = '../assets/apple-scissors.png';
+    scissorsImg.src = './assets/apple-scissors.png';
     scissorsImg.alt = 'scissors';
     let lizardImg = document.createElement('img');
     lizardImg.className = 'images-row-gamePlay';
-    lizardImg.src = '../assets/lizard.png';
+    lizardImg.src = './assets/lizard.png';
     lizardImg.alt = 'lizard';
     let spockImg = document.createElement('img');
     spockImg.className = 'images-row-gamePlay';
-    spockImg.src = '../assets/apple-spock-hand.png';
+    spockImg.src = './assets/apple-spock-hand.png';
     spockImg.alt = 'spock';
 
     //make 'button' elements
