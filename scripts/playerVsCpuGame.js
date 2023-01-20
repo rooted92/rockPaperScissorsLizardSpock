@@ -235,36 +235,57 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             break;
     }
 
+    //get cpu input
+    const GetCpuInput = () => {
+        fetch('https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption').then(
+            response => response.text()
+        ).then(
+            data => cpuInput = data.toLowerCase()
+        )
+    }
+
+    let test = GetCpuInput();
+    test = cpuInput;
+    // console.log(test);
+    // setTimeout(() => console.log(test), 50);
+
+    //when buttons are clicked it will save inputs PlayerVsCpu will compare values
     rockBtn.addEventListener('click', function () {
         playerOneInput = 'rock';
         GetCpuInput();
+        console.log(cpuInput);
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     paperBtn.addEventListener('click', function () {
         playerOneInput = 'paper';
         GetCpuInput();
+        console.log(cpuInput);
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     scissorsBtn.addEventListener('click', function () {
         playerOneInput = 'scissors';
         GetCpuInput();
+        console.log(cpuInput);
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     lizardBtn.addEventListener('click', function () {
         playerOneInput = 'lizard';
         GetCpuInput();
+        console.log(cpuInput);
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     spockBtn.addEventListener('click', function () {
         playerOneInput = 'rock';
         GetCpuInput();
+        console.log(cpuInput);
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
+    //compare inputs
     const PlayerVsCpu = (playerOne, cpu) => {
         if (playerOne === cpu) {
             gameText.textContent = 'TIE! Player 1 make your choice';
@@ -287,6 +308,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         checkCurrentScore(playerOneScore, cpuScore);
     }
 
+    //check the current score to see if there is a winner
     const checkCurrentScore = (playerOne, cpu) => {
         //validation for best 1 out of 1
         if (playerOne === cpu && bestOne && roundCounter === maxRounds) {
@@ -328,13 +350,5 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             gameText.textContent = 'CPU WINS!';
         }
     }
-    const GetCpuInput = () => {
-        fetch('https://scottsrpsls.azurewebsites.net/api/RockPaperScissors/GetRandomOption').then(
-            response => response.text()
-        ).then(
-            data =>  cpuInput = data.toLowerCase()
-        )
-    }
 }
-
 export { flag as cpuFlag, CreatePlayerVsCpuContent }
