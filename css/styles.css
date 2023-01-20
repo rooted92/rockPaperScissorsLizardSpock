@@ -93,11 +93,6 @@ h6 {
   max-width: 75px;
   height: auto;
   padding: 0rem;
-  transition: transform .2s;
-}
-
-.images-gamePlay:hover {
-  transform: scale(1.5);
 }
 
 .images-title {
