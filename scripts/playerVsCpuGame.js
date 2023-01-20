@@ -244,10 +244,9 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         )
     }
 
+    //dummy variable to resolve undefined value of cpu input
     let test = GetCpuInput();
     test = cpuInput;
-    // console.log(test);
-    // setTimeout(() => console.log(test), 50);
 
     //when buttons are clicked it will save inputs PlayerVsCpu will compare values
     rockBtn.addEventListener('click', function () {
@@ -279,7 +278,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     });
 
     spockBtn.addEventListener('click', function () {
-        playerOneInput = 'rock';
+        playerOneInput = 'spock';
         GetCpuInput();
         console.log(cpuInput);
         PlayerVsCpu(playerOneInput, cpuInput);
