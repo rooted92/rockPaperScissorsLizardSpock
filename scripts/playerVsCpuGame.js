@@ -170,7 +170,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
 
     //make link 'a' element
     let a = document.createElement('a');
-    a.href = './index.html';
+    a.href = '';
     a.className = 'main-menu-link';
     a.appendChild(returnHomeBtn);
 
