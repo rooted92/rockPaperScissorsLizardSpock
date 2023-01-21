@@ -5,7 +5,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     //make 'p' element
     let gameModeText = document.createElement('p');
     gameModeText.id = 'gameModeText';
-    gameModeText.className = 'game-mode-text';
+    gameModeText.className = 'game-mode-text zoomer';
     gameModeText.textContent = '';
 
     //make 'col-12' div
@@ -81,7 +81,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     //make 'p' elements
     let gameText = document.createElement('p');
     gameText.id = 'gameTextOutput';
-    gameText.className = 'score-text';
+    gameText.className = 'score-text floater';
     gameText.textContent = 'Player 1 make your choice';
 
     //make 'row' div
@@ -252,35 +252,35 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     rockBtn.addEventListener('click', function () {
         playerOneInput = 'rock';
         GetCpuInput();
-        gameText.textContent = 'Player 1 make your choice';
+        gameText.textContent = 'Player 1 make your choice!';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     paperBtn.addEventListener('click', function () {
         playerOneInput = 'paper';
         GetCpuInput();
-        gameText.textContent = 'Player 1 make your choice';
+        gameText.textContent = 'Player 1 make your choice!';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     scissorsBtn.addEventListener('click', function () {
         playerOneInput = 'scissors';
         GetCpuInput();
-        gameText.textContent = 'Player 1 make your choice';
+        gameText.textContent = 'Player 1 make your choice!';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     lizardBtn.addEventListener('click', function () {
         playerOneInput = 'lizard';
         GetCpuInput();
-        gameText.textContent = 'Player 1 make your choice';
+        gameText.textContent = 'Player 1 make your choice!';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
     spockBtn.addEventListener('click', function () {
         playerOneInput = 'spock';
         GetCpuInput();
-        gameText.textContent = 'Player 1 make your choice';
+        gameText.textContent = 'Player 1 make your choice!';
         PlayerVsCpu(playerOneInput, cpuInput);
     });
 
@@ -289,19 +289,21 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         if (playerOne === cpu) {
             roundsSpan.textContent++;
             roundCounter++;
-            gameText.textContent = `Round: ${roundCounter} was tied! Player 1 make your choice`;
+            gameText.textContent = `Round: ${roundCounter} was tied! Player 1 make your choice!`;
         }
         else if ((playerOne === 'rock' && (cpu === "scissors" || cpu === "lizard")) || (playerOne === "paper" && (cpu === "rock" || cpu === "spock")) || (playerOne === "scissors" && (cpu === "lizard" || cpu === "paper")) || (playerOne === "lizard" && (cpu === "paper" || cpu === "spock")) || (playerOne === "spock" && (cpu === "rock" || cpu === "scissors"))) {
             playerOneSpan.textContent++;
             playerOneScore++;
             roundsSpan.textContent++;
             roundCounter++;
+            gameText.textContent = `${playerOne.toUpperCase()} beats ${cpu.toUpperCase()}! Player 1 your choice!`;
         }
         else {
             cpuSpan.textContent++;
             cpuScore++;
             roundsSpan.textContent++;
             roundCounter++;
+            gameText.textContent = `${cpu.toUpperCase()} beats ${playerTwo.toUpperCase()}! Player 1 your choice!`;
         }
 
         checkCurrentScore(playerOneScore, cpuScore);

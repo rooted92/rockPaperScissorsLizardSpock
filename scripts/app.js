@@ -39,6 +39,14 @@ playBtn.addEventListener('click', function () {
     }
     else
     {
+        if(playerMode === playerSelect.value)
+        {
+            gameSelect.classList.add('turnRed', 'shake');
+        }
+        else if(gameMode === gameSelect.value)
+        {
+            playerSelect.classList.add('turnRed', 'shake');
+        }
         errorMessage.textContent = "Error: Please make sure you've made a selection for Player Mode and Game Mode!";
     }
 });
