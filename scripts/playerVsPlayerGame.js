@@ -342,12 +342,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         else if(playerOne === 1 && maxRounds === 1)
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = 'Player 1 WINS! GAME OVER';
         }
         else if(playerTwo === 1 && maxRounds === 1)
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 2 WINS!';
+            gameText.textContent = 'Player 2 WINS! GAME OVER';
         }
         //validation for best 3 out of 5
         else if(playerOne === playerTwo && bestThree && roundCounter === maxRounds)
@@ -358,12 +358,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         else if((playerOne === winningNumberThree && bestThree) || (roundCounter === maxRounds && playerOne > playerTwo) )
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = 'Player 1 WINS! GAME OVER';
         }
         else if((playerTwo === winningNumberThree && bestThree) || (roundCounter === maxRounds && playerTwo > playerOne))
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 2 WINS!';
+            gameText.textContent = 'Player 2 WINS! GAME OVER';
         }
         //validation for best 4 out of 7
         else if(playerOne === playerTwo && bestFour && roundCounter === maxRounds)
@@ -374,12 +374,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         else if((playerOne === winningNumberFour && bestFour) || (roundCounter === maxRounds && playerOne > playerTwo))
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = 'Player 1 WINS! GAME OVER';
         }
         else if((playerTwo === winningNumberFour && bestFour) || (roundCounter === maxRounds && playerTwo > playerOne))
         {
             imgContainer.remove()
-            gameText.textContent = 'Player 2 WINS!';
+            gameText.textContent = 'Player 2 WINS! GAME OVER';
         }
     }
 }

@@ -319,12 +319,12 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         }
         else if (playerOne > cpu && bestOne && roundCounter === maxRounds) {
             imgContainer.remove();
-            gameText.textContent = `Player 1 WINS!`;
+            gameText.textContent = `Player 1 WINS! GAME OVER`;
             return;
         }
         else if (cpu > playerOne && bestOne && roundCounter === maxRounds) {
             imgContainer.remove();
-            gameText.textContent = `CPU WINS!`;
+            gameText.textContent = `CPU WINS! GAME OVER`;
             return;
         }
         //validation for best 3 out of 5
@@ -335,12 +335,12 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         }
         else if ((playerOne === winningNumber && bestThree) || (roundCounter === maxRounds && playerOne > cpu)) {
             imgContainer.remove();
-            gameText.textContent = `Player 1 WINS!`;
+            gameText.textContent = `Player 1 WINS! GAME OVER`;
             return;
         }
         else if ((cpu === winningNumber && bestThree) || (roundCounter === maxRounds && cpu > playerOne)) {
             imgContainer.remove();
-            gameText.textContent = `CPU WINS!`;
+            gameText.textContent = `CPU WINS! GAME OVER`;
             return;
         }
         //validation for best 4 out of 7
@@ -351,12 +351,12 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         }
         else if ((playerOne === winningNumber && bestFour) || (roundCounter === maxRounds && playerOne > cpu)) {
             imgContainer.remove();
-            gameText.textContent = `Player 1 WINS!`;
+            gameText.textContent = `Player 1 WINS! GAME OVER`;
             return;
         }
         else if ((cpu === winningNumber && bestFour) || (roundCounter === maxRounds && cpu > playerOne)) {
             imgContainer.remove()
-            gameText.textContent = `CPU WINS!`;
+            gameText.textContent = `CPU WINS! GAME OVER`;
             return;
         }
     }
