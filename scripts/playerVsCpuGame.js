@@ -82,7 +82,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     let gameText = document.createElement('p');
     gameText.id = 'gameTextOutput';
     gameText.className = 'score-text floater';
-    gameText.textContent = 'Player 1 make your choice';
+    gameText.textContent = 'Player 1 make your choice!';
 
     //make 'row' div
     let secondRowDiv = document.createElement('div');
@@ -203,8 +203,7 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
     let cpuInput;
     let maxRounds = 0;
     let roundCounter = 0;
-    let winningNumberThree = 0;
-    let winningNumberFour = 0;
+    let winningNumber;
     let playerOneScore = Number(playerOneSpan.textContent);
     let cpuScore = Number(cpuSpan.textContent);
     let bestOne = false;
@@ -216,18 +215,19 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
         case '1':
             gameModeText.textContent = 'Best 1 out of 1';
             maxRounds = 1;
+            winningNumber = 1;
             bestOne = true;
             break;
         case '3':
             gameModeText.textContent = 'Best 3 out of 5';
             maxRounds = 5;
-            winningNumberThree = 3;
+            winningNumber = 3;
             bestThree = true;
             break;
         case '4':
             gameModeText.textContent = 'Best 4 out of 7';
             maxRounds = 7;
-            winningNumberFour = 4;
+            winningNumber = 4;
             bestFour = true;
             break;
         default:
@@ -303,53 +303,63 @@ const CreatePlayerVsCpuContent = (gameModeValue) => {
             cpuScore++;
             roundsSpan.textContent++;
             roundCounter++;
-            gameText.textContent = `${cpu.toUpperCase()} beats ${playerTwo.toUpperCase()}! Player 1 your choice!`;
+            gameText.textContent = `${cpu.toUpperCase()} beats ${playerOne.toUpperCase()}! Player 1 your choice!`;
         }
 
-        checkCurrentScore(playerOneScore, cpuScore);
+        CheckCurrentScore(playerOneScore, cpuScore);
     }
 
     //check the current score to see if there is a winner
-    const checkCurrentScore = (playerOne, cpu) => {
+    const CheckCurrentScore = (playerOne, cpu) => {
         //validation for best 1 out of 1
         if (playerOne === cpu && bestOne && roundCounter === maxRounds) {
             imgContainer.remove();
-            gameText.textContent = 'TIE!';
+            gameText.textContent = 'TIE! GAME OVER';
+            return;
         }
-        else if (playerOne === 1 && maxRounds === 1) {
+        else if (playerOne > cpu && bestOne && roundCounter === maxRounds) {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = `Player 1 WINS!`;
+            return;
         }
-        else if (cpu === 1 && maxRounds === 1) {
+        else if (cpu > playerOne && bestOne && roundCounter === maxRounds) {
             imgContainer.remove();
-            gameText.textContent = 'CPU WINS!';
+            gameText.textContent = `CPU WINS!`;
+            return;
         }
         //validation for best 3 out of 5
         else if (playerOne === cpu && bestThree && roundCounter === maxRounds) {
             imgContainer.remove();
-            gameText.textContent = 'TIE!';
+            gameText.textContent = 'TIE! GAME OVER';
+            return;
         }
-        else if ((playerOne === winningNumberThree && bestThree) || (roundCounter === maxRounds && playerOne > cpu)) {
+        else if ((playerOne === winningNumber && bestThree) || (roundCounter === maxRounds && playerOne > cpu)) {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = `Player 1 WINS!`;
+            return;
         }
-        else if ((cpu === winningNumberThree && bestThree) || (roundCounter === maxRounds && cpu > playerOne)) {
+        else if ((cpu === winningNumber && bestThree) || (roundCounter === maxRounds && cpu > playerOne)) {
             imgContainer.remove();
-            gameText.textContent = 'CPU WINS!';
+            gameText.textContent = `CPU WINS!`;
+            return;
         }
         //validation for best 4 out of 7
         else if (playerOne === cpu && bestFour && roundCounter === maxRounds) {
             imgContainer.remove();
-            gameText.textContent = 'TIE!';
+            gameText.textContent = 'TIE! GAME OVER';
+            return;
         }
-        else if ((playerOne === winningNumberFour && bestFour) || (roundCounter === maxRounds && playerOne > cpu)) {
+        else if ((playerOne === winningNumber && bestFour) || (roundCounter === maxRounds && playerOne > cpu)) {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = `Player 1 WINS!`;
+            return;
         }
-        else if ((cpu === winningNumberFour && bestFour) || (roundCounter === maxRounds && cpu > playerOne)) {
+        else if ((cpu === winningNumber && bestFour) || (roundCounter === maxRounds && cpu > playerOne)) {
             imgContainer.remove()
-            gameText.textContent = 'CPU WINS!';
+            gameText.textContent = `CPU WINS!`;
+            return;
         }
     }
 }
+
 export { flag as cpuFlag, CreatePlayerVsCpuContent }

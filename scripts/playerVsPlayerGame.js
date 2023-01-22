@@ -329,10 +329,10 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
             gameText.textContent = `${playerTwo.toUpperCase()} beats ${playerOne.toUpperCase()}! Player 1 your choice!`;
         }
 
-        checkCurrentScore(playerOneScore, playerTwoScore);
+        CheckCurrentScore(playerOneScore, playerTwoScore);
     }
 
-    const checkCurrentScore = (playerOne, playerTwo) => {
+    const CheckCurrentScore = (playerOne, playerTwo) => {
         //validation for best 1 out of 1
         if(playerOne === playerTwo && bestOne && roundCounter === maxRounds)
         {
