@@ -23,6 +23,42 @@
             <img class="images-row" src="./assets/lizard.png" alt="lizard">
             <img class="images-row" src="./assets/apple-spock-hand.png" alt="vulcan hand gesture">
         </div>
+        <div class="row d-flex justify-content-end">
+            <!-- Button trigger modal -->
+            <button type="button" class="rulesBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Rules of the Game
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">RPSLS Rules</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul>
+                                <li>Scissors cuts paper.</li>
+                                <li>Paper covers rock.</li>
+                                <li>Rock crushes lizard.</li>
+                                <li>Lizard poisons Spock.</li>
+                                <li>Spock smashes scissors.</li>
+                                <li>Scissors decapitates lizard.</li>
+                                <li>Lizard eats paper.</li>
+                                <li>Paper disproves Spock.</li>
+                                <li>Spock vaporizes rock.</li>
+                                <li>Rock crushes scissors.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="close-btn" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- main menu options -->
     <div id="mainContent" class="container">
@@ -41,9 +77,9 @@
                     <p>Game Mode:</p>
                     <select id="gameSelect" class="form-select mode-dropdown" aria-label="Default select example">
                         <option selected>Select Game Mode</option>
-                        <option id="oneOfOne" value= '1'>Best 1 out of 1</option>
-                        <option id="threeOfFive" value= '3'>Best 3 out of 5</option>
-                        <option id="fourOfSeven" value= '4'>Best 4 out of 7</option>
+                        <option id="oneOfOne" value='1'>Best 1 out of 1</option>
+                        <option id="threeOfFive" value='3'>Best 3 out of 5</option>
+                        <option id="fourOfSeven" value='4'>Best 4 out of 7</option>
                     </select>
                 </div>
             </div>
