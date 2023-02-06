@@ -5,7 +5,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
     //make 'p' element
     let gameModeText = document.createElement('p');
     gameModeText.id = 'gameModeText';
-    gameModeText.className = 'game-mode-text';
+    gameModeText.className = 'game-mode-text zoomer';
     gameModeText.textContent = '';
 
     //make 'col-12' div
@@ -81,8 +81,8 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
     //make 'p' elements
     let gameText = document.createElement('p');
     gameText.id = 'gameTextOutput';
-    gameText.className = 'score-text';
-    gameText.textContent = 'Player 1 make your choice';
+    gameText.className = 'score-text floater';
+    gameText.textContent = 'Player 1 make your choice!';
 
     //make 'row' div
     let secondRowDiv = document.createElement('div');
@@ -240,12 +240,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         if (playerOneTurn) {
             playerOneInput = 'rock';
             playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
+            gameText.textContent = 'Player 2 make your choice!';
         }
         else if (!playerOneTurn) {
             playerTwoInput = 'rock';
             playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
+            gameText.textContent = 'Player 1 make your choice!';
             PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
@@ -254,12 +254,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         if (playerOneTurn) {
             playerOneInput = 'paper';
             playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
+            gameText.textContent = 'Player 2 make your choice!';
         }
         else {
             playerTwoInput = 'paper';
             playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
+            gameText.textContent = 'Player 1 make your choice!';
             PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
@@ -268,12 +268,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         if (playerOneTurn) {
             playerOneInput = 'scissors';
             playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
+            gameText.textContent = 'Player 2 make your choice!';
         }
         else {
             playerTwoInput = 'scissors';
             playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
+            gameText.textContent = 'Player 1 make your choice!';
             PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
@@ -282,12 +282,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         if (playerOneTurn) {
             playerOneInput = 'lizard';
             playerOneTurn = false;
-            gameText.textContent = 'Player 2 make your choice';
+            gameText.textContent = 'Player 2 make your choice!';
         }
         else {
             playerTwoInput = 'lizard';
             playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
+            gameText.textContent = 'Player 1 make your choice!';
             PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
@@ -301,7 +301,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         else {
             playerTwoInput = 'spock';
             playerOneTurn = true;
-            gameText.textContent = 'Player 1 make your choice';
+            gameText.textContent = 'Player 1 make your choice!';
             PlayerVsPlayer(playerOneInput, playerTwoInput);
         }
     });
@@ -310,7 +310,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         if (playerOne === playerTwo) {
             roundsSpan.textContent++;
             roundCounter++;
-            gameText.textContent = `Round: ${roundCounter} was tied! | Player 1 make your choice`;
+            gameText.textContent = `Round: ${roundCounter} was tied! | Player 1 make your choice!`;
         }
         else if ((playerOne === 'rock' && (playerTwo === "scissors" || playerTwo === "lizard")) || (playerOne == "paper" && (playerTwo === "rock" || playerTwo === "spock")) || (playerOne === "scissors" && (playerTwo === "lizard" || playerTwo === "paper")) || (playerOne === "lizard" && (playerTwo === "paper" || playerTwo === "spock")) || (playerOne === "spock" && (playerTwo === "rock" || playerTwo === "scissors")))
         {
@@ -318,6 +318,7 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
             playerOneScore++;
             roundsSpan.textContent++;
             roundCounter++;
+            gameText.textContent = `${playerOne.toUpperCase()} beats ${playerTwo.toUpperCase()}! Player 1 your choice!`;
         }
         else
         {
@@ -325,12 +326,13 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
             playerTwoScore++;
             roundsSpan.textContent++;
             roundCounter++;
+            gameText.textContent = `${playerTwo.toUpperCase()} beats ${playerOne.toUpperCase()}! Player 1 your choice!`;
         }
 
-        checkCurrentScore(playerOneScore, playerTwoScore);
+        CheckCurrentScore(playerOneScore, playerTwoScore);
     }
 
-    const checkCurrentScore = (playerOne, playerTwo) => {
+    const CheckCurrentScore = (playerOne, playerTwo) => {
         //validation for best 1 out of 1
         if(playerOne === playerTwo && bestOne && roundCounter === maxRounds)
         {
@@ -340,12 +342,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         else if(playerOne === 1 && maxRounds === 1)
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = 'Player 1 WINS! GAME OVER';
         }
         else if(playerTwo === 1 && maxRounds === 1)
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 2 WINS!';
+            gameText.textContent = 'Player 2 WINS! GAME OVER';
         }
         //validation for best 3 out of 5
         else if(playerOne === playerTwo && bestThree && roundCounter === maxRounds)
@@ -356,12 +358,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         else if((playerOne === winningNumberThree && bestThree) || (roundCounter === maxRounds && playerOne > playerTwo) )
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = 'Player 1 WINS! GAME OVER';
         }
         else if((playerTwo === winningNumberThree && bestThree) || (roundCounter === maxRounds && playerTwo > playerOne))
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 2 WINS!';
+            gameText.textContent = 'Player 2 WINS! GAME OVER';
         }
         //validation for best 4 out of 7
         else if(playerOne === playerTwo && bestFour && roundCounter === maxRounds)
@@ -372,12 +374,12 @@ const CreatePlayerVsPlayerContent = (gameModeValue) => {
         else if((playerOne === winningNumberFour && bestFour) || (roundCounter === maxRounds && playerOne > playerTwo))
         {
             imgContainer.remove();
-            gameText.textContent = 'Player 1 WINS!';
+            gameText.textContent = 'Player 1 WINS! GAME OVER';
         }
         else if((playerTwo === winningNumberFour && bestFour) || (roundCounter === maxRounds && playerTwo > playerOne))
         {
             imgContainer.remove()
-            gameText.textContent = 'Player 2 WINS!';
+            gameText.textContent = 'Player 2 WINS! GAME OVER';
         }
     }
 }

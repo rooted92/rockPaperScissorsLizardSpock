@@ -179,3 +179,39 @@ h6 {
 .img-container {
   margin-bottom: 10rem;
 }
+
+.turnRed {
+  border: solid 2px red;
+}
+
+.rulesBtn {
+  max-width: 10rem;
+  border-radius: 0rem;
+  background-color: black;
+  color: white;
+  border: dashed 1px white;
+  padding: .4rem;
+}
+
+.modal-content {
+  background-color: black;
+  border: solid 1px #00D622;
+  border-radius: 0rem;
+}
+
+.close-btn {
+  border: dashed 1px white;
+  background-color: black;
+  color: white;
+  padding: .2rem .2rem;
+  width: 4rem;
+}
+
+.btn-close {
+  background-color: red;
+  border-radius: 0rem;
+}
+
+li {
+  list-style-type: none;
+}
