@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="row slideLeft">
+        <div class="row slideLeft mb-5">
             <div class="col-6 d-flex flex-row images-title">
                 <img class="images-row" src="./assets/apple-rock.png" alt="rock">
                 <img class="images-row" src="./assets/apple-roll-of-paper.png" alt="paper">
@@ -68,19 +68,21 @@
             </div>
         </div>
         <!-- main menu options -->
-        <div id="mainContent" class="container">
-            <div class="container-fluid main-menu-options">
-                <div class="row">
-                    <div class="col-6 d-flex flex-column align-items-end">
-                        <p class="player-mode-text">Player Mode:</p>
-                        <select id="playerSelect" class="form-select mode-dropdown player-mode-options"
+        <div id="mainContent">
+            <div class="row">
+                <div class="col-6 d-flex flex-column align-items-center">
+                    <div>
+                        <p>Player Mode:</p>
+                        <select id="playerSelect" class="form-select mode-dropdown"
                             aria-label="Default select example">
                             <option selected>Select Player Mode</option>
                             <option id="playerVsCpu" value="playerVsCpu">Player 1 vs CPU</option>
                             <option id="playerVsPlayer" value="playerVsPlayer">Player 1 vs Player 2</option>
                         </select>
                     </div>
-                    <div class="col-6">
+                </div>
+                <div class="col-6 d-flex flex-column align-items-center">
+                    <div>
                         <p>Game Mode:</p>
                         <select id="gameSelect" class="form-select mode-dropdown" aria-label="Default select example">
                             <option selected>Select Game Mode</option>
