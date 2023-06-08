@@ -79,13 +79,12 @@ h6 {
 
 .page-title {
   font-size: 3rem;
-  margin-left: 3rem;
   margin-top: 1rem;
 }
 
 .images-row {
-  max-width: 25px;
-  height: auto;
+  max-width: auto;
+  height: 2.5rem;
   padding: 0rem;
 }
 
@@ -97,7 +96,6 @@ h6 {
 
 .images-title {
   gap: .5rem;
-  margin-left: -1.5rem;
 }
 
 .images-gamePlay {
